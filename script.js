@@ -1,33 +1,31 @@
 //Object with todo list items.
 
+
  var todoList = {
-    todos:['item 1', 'item 2', 'item 3']
-};
+    todos:['item 1', 'item 2', 'item 3'],
+    //Method created from displayTodos stand-alone function.
+    displayTodos: function() {
+        console.log('My Todos:', this.todos);
+    },
+    //Method created from addTodo stand-alone function.
+    addTodo: function(todo) {
+    this.todos.push(todo),
+    this.displayTodos();   
+    },
+    //It should have a method to change a change Todo item to a new value
+    //created from changeTodo stand-alone function.
+    changeTodo: function(position, newValue) {
+        this.todos[position] = newValue;
+        this.displayTodos();
+    },
+    //It should have a method to delete a todo item to a new value
+    deleteTodo: function (position) {
+        this.todos.splice(position, 1);
+        this.displayTodos();
+    }
+ };
 
-//It should have a function to display todo list.
-function displayTodos() {
-console.log('My Todos:', todos);
-};
+ todoList.displayTodos();
 
-displayTodos();
 
-//It should have a function to change todos.
-function addTodo(todo) {
-    todos.push(todo);
-    displayTodos();   
-    
-};
-
-//It should have a function to change a todo item to a new value
-function changeTodo(position, newValue) { 
-    todos[position] = newValue;
-    displayTodos();   
-};
-
-//It should have a function to delete a todo from a stated position
-function deleteTodo(position) {
-    todos.splice(position, 1);
-    displayTodos();   
-
-};
 
