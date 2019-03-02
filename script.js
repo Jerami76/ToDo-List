@@ -1,5 +1,8 @@
-//Variable with todo list items.
-var todos = ['item 1', 'item 2', 'item 3'];
+//Object with todo list items.
+
+ var todoList = {
+    todos:['item 1', 'item 2', 'item 3']
+};
 
 //It should have a function to display todo list.
 function displayTodos() {
