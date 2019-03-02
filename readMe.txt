@@ -1,0 +1,1 @@
+This will be a folder for an ugly todo list, using PracticalJavascript with Gordon Zhu.

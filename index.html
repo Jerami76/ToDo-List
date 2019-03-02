@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<main>
+<div>This is a js test <p> </p> </div>
+</main>
+ <script>
+
+var todos = ['item 1', 'item 2', 'item 3'];
+
+function displayTodos() {
+console.log('My Todos:', todos);
+};
+
+displayTodos();
+
+function addTodo(todo) {
+    todos.push(todo);
+    displayTodos();   
+    
+};
+
+function changeTodo(position, newValue) { //change a todo item to a new value
+    todos[position] = newValue;
+    displayTodos();   
+};
+
+function deleteTodo(position) {
+    todos.splice(position, 1);
+    displayTodos();   
+
+}
+
+
+
+</script>
+   
+</body>
+</html>
+
