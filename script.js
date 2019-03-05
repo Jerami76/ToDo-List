@@ -1,11 +1,16 @@
 //changed to array of objects-todo list items.
 
+//for loop (initialize condition final-state)
 
  var todoList = {
     todos:[],
     //Method created from displayTodos stand-alone function.
+    //v5 .displayTodos should show .todoText.
+    //v5 ...should tell you if .todos is empty.
+    //v5 ...should show .completed.
     displayTodos: function() {
-        console.log('My Todos:', this.todos);
+        console.log('My Todos:', this.todos[0].todoText);
+        
     },
     //Method created from addTodo stand-alone function.
     addTodo: function(todoText) { 
@@ -29,7 +34,7 @@
         this.displayTodos();
     },
 
-    //It should have a todoList.toggleCompleted method to modify completed property. **I'm going to try modelling it after changeTodo method.
+    //It should have a todoList.toggleCompleted method to modify completed property. **I'm going to try modeling it after changeTodo method.
     toggleCompleted: function(position) {
         var todo = this.todos[position];
         todo.completed = !todo.completed; 
