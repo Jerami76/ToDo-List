@@ -5,14 +5,17 @@
  var todoList = {
     todos:[],
     //Method created from displayTodos stand-alone function.
-    //v5 .displayTodos should show .todoText.
-    //v5 ...should tell you if .todos is empty.
+    //v5 [Done] displayTodos should show .todoText. should tell you if .todos is empty.
     //v5 ...should show .completed.
-    displayTodos: function() {
-        console.log('My Todos:');
-        for (var i = 0; i < this.todos.length; i++) {
+    displayTodos: function() {             
+        if (this.todos.length === 0) {
+            console.log('Your todo list is empty!')          
+        } else {
+          console.log('My Todos:');
+          for (var i = 0; i < this.todos.length; i++) {
             console.log(this.todos[i].todoText);
-        }        
+        } 
+        }
     },
 
     //Method created from addTodo stand-alone function.
@@ -49,7 +52,7 @@
     }
  };
 
- 
+
 
 
 
