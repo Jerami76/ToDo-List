@@ -87,16 +87,27 @@ var todoList = {
 };
 
 // 1. We want to get access to the display todos button.
-var displayTodosButton = document.getElementById('displayTodosButton'); //alternately(copyJsPath)- document.querySelector('#displayTodosButton');
-var toggleAllButton =document.getElementById('toggleAllButton');
-
+//var displayTodosButton = document.getElementById('displayTodosButton'); 
+//var toggleAllButton =document.getElementById('toggleAllButton');
 // 2. Run the displayTodos method when display todos button is clicked.
 // grab variable, add listener(event, function() {action});
-displayTodosButton.addEventListener('click', function() {
+/*displayTodosButton.addEventListener('click', function() {
     todoList.displayTodos();
 });
-
 toggleAllButton.addEventListener('click', function() {
     todoList.toggleAll();
-});
+}); */
+// Refactored above variables, listeners into handlers object making element #'s redundant.
+// We will be using format below, linking buttons into handlers object to keep code DRY and readable. 
+// Above comments will be removed in future update.
 
+var handlers = {
+    
+    displayTodos: function() {
+        todoList.displayTodos();
+    },
+    
+    toggleAll: function() {
+        todoList.toggleAll();
+    },
+};
