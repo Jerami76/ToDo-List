@@ -115,9 +115,10 @@ var handlers = {
         todoList.addTodo(addTodoTextInput.value);
         addTodoTextInput.value = '';
     },
-    changeTodo: function() {
-        var changeTodoNumber = document.getElementById('changeTodoNumber');
+    changeTodo: function() {        
+        var changeTodoPositionInput = document.getElementById('changeTodoPositionInput');
         var changeTodoTextInput = document.getElementById('changeTodoTextInput');
-        todoList.changeTodo((changeTodoNumber.value - 1), changeTodoTextInput.value);
+        todoList.changeTodo((changeTodoPositionInput.value - 1), changeTodoTextInput.value);
+        //The code/course that I'm following mentions that you need to use .valueAsNumber here. Not sure why since input type = "number". Must ask. Works without? Debug is accurate and predictable.
     }
 };
