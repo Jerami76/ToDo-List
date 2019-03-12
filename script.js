@@ -115,4 +115,9 @@ var handlers = {
         todoList.addTodo(addTodoTextInput.value);
         addTodoTextInput.value = '';
     },
+    changeTodo: function() {
+        var changeTodoNumber = document.getElementById('changeTodoNumber');
+        var changeTodoTextInput = document.getElementById('changeTodoTextInput');
+        todoList.changeTodo((changeTodoNumber.value - 1), changeTodoTextInput.value);
+    }
 };
