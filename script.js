@@ -86,7 +86,14 @@ var todoList = {
 
 };
 
+// 1. We want to get access to the display todos button.
+var displayTodosButton = document.getElementById('displayTodosButton');
 
+// 2. Run the displayTodos method when display todos button is clicked.
+// grab variable, add listener(event, function() {action});
+displayTodosButton.addEventListener('click', function() {
+    todoList.displayTodos();
+});
 
 
 
