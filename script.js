@@ -1,10 +1,15 @@
+/* This script is a todo list app created during completion of Practical JS */
+// for loop (initialize; condition; final-expression)
 
-//for loop (initialize condition final-expression)
+// v7(HTML Integration) Requirements-
+// There should be a "Display todos" button and a "Toggle all" button in the app.
+// Clicking "Display todos" should run todoList.displayTodos.
+// Clicking "Toggle all" should run todoList.toggleAll.
 
- var todoList = {
+var todoList = {
     todos:[],
-    //Method created from displayTodos stand-alone function.
-    //v5 [Done] displayTodos should show .todoText. should tell you if .todos is empty..should show .completed.
+
+    //Method created from displayTodos stand-alone function.    
     displayTodos: function() {             
         if (this.todos.length === 0) {
             console.log('Your todo list is empty!')          
@@ -79,7 +84,7 @@
         this.displayTodos();
     }
 
- };
+};
 
 
 
