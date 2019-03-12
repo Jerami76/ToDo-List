@@ -1,7 +1,7 @@
 /* This script is a todo list app created during completion of Practical JS */
 // for loop (initialize; condition; final-expression)
 
-// v7(HTML Integration) Requirements-
+// v7(HTML Integration) complete and tested-
 // There should be a "Display todos" button and a "Toggle all" button in the app.
 // Clicking "Display todos" should run todoList.displayTodos.
 // Clicking "Toggle all" should run todoList.toggleAll.
@@ -87,7 +87,7 @@ var todoList = {
 };
 
 // 1. We want to get access to the display todos button.
-var displayTodosButton = document.getElementById('displayTodosButton');
+var displayTodosButton = document.getElementById('displayTodosButton'); //alternately(copyJsPath)- document.querySelector('#displayTodosButton');
 var toggleAllButton =document.getElementById('toggleAllButton');
 
 // 2. Run the displayTodos method when display todos button is clicked.
