@@ -119,6 +119,14 @@ var handlers = {
         var changeTodoPositionInput = document.getElementById('changeTodoPositionInput');
         var changeTodoTextInput = document.getElementById('changeTodoTextInput');
         todoList.changeTodo((changeTodoPositionInput.value - 1), changeTodoTextInput.value);
+        changeTodoPositionInput.value = '';
+        changeTodoTextInput = '';
+
         //The code/course that I'm following mentions that you need to use .valueAsNumber here. Not sure why since input type = "number". Must ask. Works without? Debug is accurate and predictable.
-    }
+        //Not sure if this course will get there but, I think I'd like to force completed=false.
+    },
+    deleteTodo: function() {
+        var deleteTodoPostion = document.getElementById('deleteTodoPosition')
+        todoList.deleteTodo((deleteTodoPostion.value -1));
+    },
 };
