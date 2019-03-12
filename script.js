@@ -86,29 +86,11 @@ var todoList = {
 
 };
 
-// 1. We want to get access to the display todos button.
-//var displayTodosButton = document.getElementById('displayTodosButton'); 
-//var toggleAllButton =document.getElementById('toggleAllButton');
-// 2. Run the displayTodos method when display todos button is clicked.
-// grab variable, add listener(event, function() {action});
-/*displayTodosButton.addEventListener('click', function() {
-    todoList.displayTodos();
-});
-toggleAllButton.addEventListener('click', function() {
-    todoList.toggleAll();
-}); */
-// Refactored above variables, listeners into handlers object making element #'s redundant.
-// We will be using format below, linking buttons into handlers object to keep code DRY and readable. 
-// Above comments will be removed in future update.
-
+//Handlers for onclick events
 var handlers = {
     
     displayTodos: function() {
         todoList.displayTodos();
-    },
-
-    toggleAll: function() {
-        todoList.toggleAll();
     },
     addTodo: function() {
         var addTodoTextInput = document.getElementById('addTodoTextInput');
@@ -126,7 +108,17 @@ var handlers = {
         //Not sure if this course will get there but, I think I'd like to force completed=false.
     },
     deleteTodo: function() {
-        var deleteTodoPostion = document.getElementById('deleteTodoPosition')
-        todoList.deleteTodo((deleteTodoPostion.value -1));
+        var deleteTodoPostion = document.getElementById('deleteTodoPositionInput')
+        todoList.deleteTodo((deleteTodoPostion.value - 1)); // -1 to match user expected functionality.
+        deleteTodoPostion = '';
     },
+    toggleCompleted: function() {
+        var toggleCompletedPosition = document.getElementById('toggleCompletedPositionInput')
+        todoList.toggleCompleted((toggleCompletedPosition.value - 1));
+        toggleCompletedPosition = '';
+    },
+    toggleAll: function() {
+        todoList.toggleAll();
+    } //last method doesn't take a ','
+        
 };
