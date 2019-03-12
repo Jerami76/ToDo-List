@@ -1,10 +1,10 @@
 /* This script is a todo list app created during completion of Practical JS */
 // for loop (initialize; condition; final-expression)
 
-// v7(HTML Integration) complete and tested-
-// There should be a "Display todos" button and a "Toggle all" button in the app.
-// Clicking "Display todos" should run todoList.displayTodos.
-// Clicking "Toggle all" should run todoList.toggleAll.
+// v8 It should have working controls for .addTodo
+// It should have working controls for .changeTodo
+// It should have working controls for .deleteTodo
+// It should have working controls for .toggleCompleted
 
 var todoList = {
     todos:[],
@@ -106,8 +106,13 @@ var handlers = {
     displayTodos: function() {
         todoList.displayTodos();
     },
-    
+
     toggleAll: function() {
         todoList.toggleAll();
+    },
+    addTodo: function() {
+        var addTodoTextInput = document.getElementById('addTodoTextInput');
+        todoList.addTodo(addTodoTextInput.value);
+        addTodoTextInput.value = '';
     },
 };
