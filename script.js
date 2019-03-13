@@ -1,11 +1,9 @@
 /* This script is a todo list app created during completion of Practical JS */
 // for loop (initialize; condition; final-expression)
 
-// v8 It should have working controls for .addTodo
-// It should have working controls for .changeTodo
-// It should have working controls for .deleteTodo
-// It should have working controls for .toggleCompleted
-
+// v9 There should be an li element for every todo
+// Each li element should contain .todoText
+// Each li element should show .completed
 var todoList = {
     todos:[],
 
@@ -102,7 +100,7 @@ var handlers = {
         var changeTodoTextInput = document.getElementById('changeTodoTextInput');
         todoList.changeTodo((changeTodoPositionInput.value - 1), changeTodoTextInput.value);
         changeTodoPositionInput.value = '';
-        changeTodoTextInput = '';
+        changeTodoTextInput.value = '';
 
         //The code/course that I'm following mentions that you need to use .valueAsNumber here. Not sure why since input type = "number". Must ask. Works without? Debug is accurate and predictable.
         //Not sure if this course will get there but, I think I'd like to force completed=false.
@@ -110,15 +108,33 @@ var handlers = {
     deleteTodo: function() {
         var deleteTodoPostion = document.getElementById('deleteTodoPositionInput')
         todoList.deleteTodo((deleteTodoPostion.value - 1)); // -1 to match user expected functionality.
-        deleteTodoPostion = '';
+        deleteTodoPostion.value = '';
     },
     toggleCompleted: function() {
         var toggleCompletedPosition = document.getElementById('toggleCompletedPositionInput')
         todoList.toggleCompleted((toggleCompletedPosition.value - 1));
-        toggleCompletedPosition = '';
+        toggleCompletedPosition.value = '';
     },
     toggleAll: function() {
         todoList.toggleAll();
     } //last method doesn't take a ','
         
 };
+
+//This object(view) is only for displaying(rendering). 
+//It clears the ul then, for each todos, create an li element then add(append) it to the ul.
+var view = { 
+    displayTodos: function () {
+        var todosUl = document.querySelector('ul');
+        todosUl.innerHTML = ''; //Use innerHTML to grab contents of todosUl
+        for (var i = 0; i < todoList.todos.length; i++) {
+            var todoLi = document.createElement('li');
+            todosUl.appendChild(todoLi);
+        }
+    }
+};
+
+// Sample code
+// var todoLi = document.createElement('li');
+// var todosUl = document.querySelector('ul');
+// todosUl.appendChild(todoLi);
