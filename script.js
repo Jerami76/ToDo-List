@@ -1,8 +1,8 @@
 /* This script is a todo list app created during completion of Practical JS */
 // for loop (initialize; condition; final-expression)
 
-// v9 There should be an li element for every todo
-// Each li element should contain .todoText
+// v9 There should be an li element for every todo[Done]
+// Each li element should contain .todoText[Done]
 // Each li element should show .completed
 var todoList = {
     todos:[],
@@ -129,6 +129,7 @@ var view = {
         todosUl.innerHTML = ''; //Use innerHTML to grab contents of todosUl
         for (var i = 0; i < todoList.todos.length; i++) {
             var todoLi = document.createElement('li');
+            todoLi.textContent = todoList.todos[i].todoText;//.textContent(not value) to set li text= .todoText
             todosUl.appendChild(todoLi);
         }
     }
