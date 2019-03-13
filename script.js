@@ -3,7 +3,7 @@
 
 // v9 There should be an li element for every todo[Done]
 // Each li element should contain .todoText[Done]
-// Each li element should show .completed
+// Each li element should show .completed[Done]
 var todoList = {
     todos:[],
 
@@ -129,7 +129,18 @@ var view = {
         todosUl.innerHTML = ''; //Use innerHTML to grab contents of todosUl
         for (var i = 0; i < todoList.todos.length; i++) {
             var todoLi = document.createElement('li');
-            todoLi.textContent = todoList.todos[i].todoText;//.textContent(not value) to set li text= .todoText
+            var todo = todoList.todos[i];
+            var todoTextWithCompletion = '';
+
+            if (todo.completed === true) {
+                todoTextWithCompletion = '(x) ' + todo.todoText;
+            } else {
+                todoTextWithCompletion = '(_) ' + todo.todoText;
+            }
+
+            //[Old]todoLi.textContent = todoList.todos[i].todoText;
+            //.textContent(not value) to set li text= .todoText
+            todoLi.textContent = todoTextWithCompletion
             todosUl.appendChild(todoLi);
         }
     }
