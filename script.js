@@ -3,8 +3,8 @@
 // v10
 // There should be a way to create delete buttons[Done]
 // There should be a delete button for each todo[Done]
-// Each li should have an id that has the todo position
-// Delete buttons should have access to the todo id
+// Each li should have an id that has the todo position[Done]
+// Delete buttons should have access to the todo id[Done]
 // Clicking delete should updtae todoList.todos and the DOM
 
 var todoList = {
@@ -110,7 +110,7 @@ var view = {
             } else {
                 todoTextWithCompletion = '(_) ' + todo.todoText;
             }
-            
+
             todoLi.id = i;
             todoLi.textContent = todoTextWithCompletion
             todoLi.appendChild(this.createDeleteButton());
@@ -127,6 +127,11 @@ var view = {
     }
 };
 
+var todosUl = document.querySelector('ul');
+
+todosUl.addEventListener('click', function(event) {
+    console.log(event.target.parentNode.id); //Since id is on parent
+});
 // Sample code
 // var todoLi = document.createElement('li');
 // var todosUl = document.querySelector('ul');
