@@ -1,11 +1,8 @@
 /* This script is a todo list app created during completion of Practical JS */
 // 
-// v10
-// There should be a way to create delete buttons[Done]
-// There should be a delete button for each todo[Done]
-// Each li should have an id that has the todo position[Done]
-// Delete buttons should have access to the todo id[Done]
-// Clicking delete should update todoList.todos and the DOM[Done]
+// v11
+// todoList.toggleAll should use forEach
+// view.displayTodos should use forEach
 
 var todoList = {
     todos:[],
@@ -35,24 +32,38 @@ var todoList = {
         var totalTodos = this.todos.length;
         var completedTodos = 0;
 
-        //get number of completed todos.
-        for (var i = 0; i < totalTodos; i++) {
-            if (this.todos[i].completed === true) {
+        // get number of completed todos.
+        // for (var i = 0; i < totalTodos; i++) {
+        //     if (this.todos[i].completed === true) {
+        //         completedTodos++;
+        //     }
+        // }
+        this.todos.forEach(function(todo) {
+            if (todo.completed === true) {
                 completedTodos++;
             }
-        }
+        });
 
-        //Case 1: if everything's true make everything false.
-        if (completedTodos === totalTodos) {
-            for (var i = 0; i < totalTodos; i++) {
-                this.todos[i].completed = false;
+        this.todos.forEach(function(todo) {
+            //Case 1: If all are true, make all false.
+            if (completedTodos === totalTodos) {
+                todo.completed = false;
+            //Case 3: Otherwise make all false.
+            } else {
+                todo.completed = true;
             }
-        } else { //Case 2: otherwise make everything true.
-            for (var i = 0; i < totalTodos; i++) {
-                this.todos[i].completed = true;
-            }
-        }
-    }
+        });
+
+        // [Old code refactored to forEach]if (completedTodos === totalTodos) {
+        //     this.todos.forEach(function(todo) {
+        //         todo.completed = false;
+        //     });
+        // } else {
+        //     this.todos.forEach(function(todo) {
+        //         todo.completed = true;
+        //     });
+        // }      
+     }
 
 };
 
