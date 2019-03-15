@@ -1,10 +1,11 @@
 /* This script is a todo list app created during completion of Practical JS */
-// for loop (initialize; condition; final-expression)
-
-// v9 There should be an li element for every todo[Done]
-// Each li element should contain .todoText[Done]
-// Each li element should show .completed[Done]
-// Moved diplay from console to DOM[Done]
+// 
+// v10
+// There should be a way to create delete buttons[Done]
+// There should be a delete button for each todo
+// Each li should have an id that has the todo position
+// Delete buttons should have access to the todo id
+// Clicking delete should updtae todoList.todos and the DOM
 
 var todoList = {
     todos:[],
@@ -16,9 +17,7 @@ var todoList = {
     });  
     },
 
-    //Modified changeTodo to work on todos object -> todoText property.
     changeTodo: function(position, todoText) {
-       // Old code-> this.todos[position] = newValue;
        this.todos[position].todoText = todoText;
     },
 
@@ -69,7 +68,7 @@ var handlers = {
     changeTodo: function() {        
         var changeTodoPositionInput = document.getElementById('changeTodoPositionInput');
         var changeTodoTextInput = document.getElementById('changeTodoTextInput');
-        todoList.changeTodo((changeTodoPositionInput.value - 1), changeTodoTextInput.value);
+        todoList.changeTodo((changeTodoPositionInput.valueAsNumber - 1), changeTodoTextInput.value);
         changeTodoPositionInput.value = '';
         changeTodoTextInput.value = '';
         view.displayTodos();
@@ -79,13 +78,13 @@ var handlers = {
     },
     deleteTodo: function() {
         var deleteTodoPostion = document.getElementById('deleteTodoPositionInput')
-        todoList.deleteTodo((deleteTodoPostion.value - 1)); // -1 to match user expected functionality.
+        todoList.deleteTodo((deleteTodoPostion.valueAsNumber - 1)); // -1 to match user expected functionality.
         deleteTodoPostion.value = '';
         view.displayTodos();
     },
     toggleCompleted: function() {
         var toggleCompletedPosition = document.getElementById('toggleCompletedPositionInput')
-        todoList.toggleCompleted((toggleCompletedPosition.value - 1));
+        todoList.toggleCompleted((toggleCompletedPosition.valueAsNumber - 1));
         toggleCompletedPosition.value = '';
         view.displayTodos();
     },
@@ -114,7 +113,15 @@ var view = {
 
             todoLi.textContent = todoTextWithCompletion
             todosUl.appendChild(todoLi);
+          
         }
+    },
+    createDeleteButton: function () {
+        deleteButton = document.createElement('button');
+        deleteButton.textContent = 'Delete';
+        deleteButton.className = 'deleteButton' 
+        return deleteButton;
+
     }
 };
 
