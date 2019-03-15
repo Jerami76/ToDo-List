@@ -5,7 +5,7 @@
 // There should be a delete button for each todo[Done]
 // Each li should have an id that has the todo position[Done]
 // Delete buttons should have access to the todo id[Done]
-// Clicking delete should updtae todoList.todos and the DOM
+// Clicking delete should update todoList.todos and the DOM[Done]
 
 var todoList = {
     todos:[],
@@ -76,10 +76,9 @@ var handlers = {
         //The code/course that I'm following mentions that you need to use .valueAsNumber here. Not sure why since input type = "number". Must ask. Works without? Debug is accurate and predictable.
         //Not sure if this course will get there but, I think I'd like to force completed=false on changeTodo.
     },
-    deleteTodo: function() {
-        var deleteTodoPostion = document.getElementById('deleteTodoPositionInput')
-        todoList.deleteTodo((deleteTodoPostion.valueAsNumber - 1)); // -1 to match user expected functionality.
-        deleteTodoPostion.value = '';
+    deleteTodo: function(position) {
+        todoList.deleteTodo(position); 
+        
         view.displayTodos();
     },
     toggleCompleted: function() {
@@ -96,7 +95,7 @@ var handlers = {
 
 //displayTodos functionality has been changed to automatically display in HTML, and moved to view
 //It clears the ul then, for each todos, create an li element then add(append) it to the ul.
-var view = { 
+var view = {
     displayTodos: function () {
         var todosUl = document.querySelector('ul');
         todosUl.innerHTML = ''; //Use innerHTML to grab contents of todosUl
@@ -115,24 +114,30 @@ var view = {
             todoLi.textContent = todoTextWithCompletion
             todoLi.appendChild(this.createDeleteButton());
             todosUl.appendChild(todoLi);
-          
+
         }
     },
+
     createDeleteButton: function () {
         deleteButton = document.createElement('button');
         deleteButton.textContent = 'Delete';
-        deleteButton.className = 'deleteButton' 
+        deleteButton.className = 'deleteButton'
         return deleteButton;
+    },
+
+    setUpEventListeners: function () {
+        var todosUl = document.querySelector('ul');
+
+        todosUl.addEventListener('click', function (event) {
+            //Get the element clicked on.
+            var elementClicked = event.target;
+
+            if (elementClicked.className === 'deleteButton') {
+                handlers.deleteTodo(parseInt(elementClicked.parentNode.id));
+            }
+        });
 
     }
 };
 
-var todosUl = document.querySelector('ul');
-
-todosUl.addEventListener('click', function(event) {
-    console.log(event.target.parentNode.id); //Since id is on parent
-});
-// Sample code
-// var todoLi = document.createElement('li');
-// var todosUl = document.querySelector('ul');
-// todosUl.appendChild(todoLi);
+view.setUpEventListeners();
