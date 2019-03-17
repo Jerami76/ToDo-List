@@ -1,0 +1,15 @@
+:root {
+  box-sizing: border-box;
+   
+}
+*::before, *::after  {
+  box-sizing: inherit;
+}
+ul {
+  display: flex;
+}
+
+a {
+  width: calc(50% - 2em);
+  transition: transform 1s
+}

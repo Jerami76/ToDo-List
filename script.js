@@ -1,4 +1,5 @@
-/* This script is a todo list app created during completion of Practical JS */
+
+// This script is a todo list app created during completion of Practical JS //
 // 
 // v11
 // todoList.toggleAll should use forEach[Done]
@@ -108,7 +109,7 @@ var view = {
             todosUl.appendChild(todoLi);
         }, this); 
     },
-
+    
     createDeleteButton: function () {
         deleteButton = document.createElement('button');
         deleteButton.textContent = 'Delete';
