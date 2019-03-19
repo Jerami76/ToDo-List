@@ -116,6 +116,13 @@ var view = {
         deleteButton.className = 'deleteButton'
         return deleteButton;
     },
+//create a button to toggle completed.
+    createToggleCompletedButton: function() {
+        toggleCompletedButton = document.createElement('button');
+        toggleCompletedButton.textContent = 'Completed';
+        toggleCompletedButton.className = 'toggleCompletedButton'
+        return toggleCompletedButton;
+    },
 
     setUpEventListeners: function () {
         var todosUl = document.querySelector('ul');
