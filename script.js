@@ -86,11 +86,11 @@ var handlers = {
     }     
 };
 
-//It clears the ul then, for each todos, create an li element then add(append) it to the ul.
+//It clears the ol then, for each todos, create an li element then add(append) it to the ol.
 var view = {
     displayTodos: function () {
-        var todosUl = document.querySelector('ul');
-        todosUl.innerHTML = ''; //Use innerHTML to grab contents of todosUl
+        var todosOl = document.querySelector('ol');
+        todosOl.innerHTML = ''; //Use innerHTML to grab contents of todosOl
 
         todoList.todos.forEach(function(todo, position) {
             var todoLi = document.createElement('li');
@@ -104,9 +104,9 @@ var view = {
 
             todoLi.id = position;
             todoLi.textContent = todoTextWithCompletion
-            todoLi.appendChild(this.createDeleteButton());
             todoLi.appendChild(this.createToggleCompletedButton());
-            todosUl.appendChild(todoLi);
+            todoLi.appendChild(this.createDeleteButton());
+            todosOl.appendChild(todoLi);
             
         }, this); 
     },
@@ -120,15 +120,15 @@ var view = {
 //create a button to toggle completed.
     createToggleCompletedButton: function() {
         toggleCompletedButton = document.createElement('button');
-        toggleCompletedButton.textContent = 'Completed';
+        toggleCompletedButton.textContent = 'Complete';
         toggleCompletedButton.className = 'toggleCompletedButton'
         return toggleCompletedButton;
     },
 
     setUpEventListeners: function () {
-        var todosUl = document.querySelector('ul');
+        var todosOl = document.querySelector('ol');
 
-        todosUl.addEventListener('click', function (event) {
+        todosOl.addEventListener('click', function (event) {
             //Get the element clicked on.
             var elementClicked = event.target;
             //Check if elementClicked is a deleteButton. If so, run deleteTodo.
