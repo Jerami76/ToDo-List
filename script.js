@@ -75,10 +75,9 @@ var handlers = {
 
         view.displayTodos();
     },
-    toggleCompleted: function () {
-        var toggleCompletedPosition = document.getElementById('toggleCompletedPositionInput')
-        todoList.toggleCompleted((toggleCompletedPosition.valueAsNumber - 1));
-        toggleCompletedPosition.value = '';
+    toggleCompleted: function (position) {
+        todoList.toggleCompleted(position);
+    
         view.displayTodos();
     },
     toggleAll: function () {
@@ -106,7 +105,9 @@ var view = {
             todoLi.id = position;
             todoLi.textContent = todoTextWithCompletion
             todoLi.appendChild(this.createDeleteButton());
+            todoLi.appendChild(this.createToggleCompletedButton());
             todosUl.appendChild(todoLi);
+            
         }, this); 
     },
     
@@ -133,6 +134,9 @@ var view = {
             //Check if elementClicked is a deleteButton. If so, run deleteTodo.
             if (elementClicked.className === 'deleteButton') {
                 handlers.deleteTodo(parseInt(elementClicked.parentNode.id));
+            }
+            if (elementClicked.className === 'toggleCompletedButton') {
+                handlers.toggleCompleted(parseInt(elementClicked.parentNode.id))
             }
         });
 
