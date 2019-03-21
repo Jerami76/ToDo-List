@@ -1,10 +1,43 @@
+@import url('https://fonts.googleapis.com/css?family=ZCOOL+XiaoWei');
+
 :root {
   box-sizing: border-box;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: 'ZCOOL XiaoWei', serif;
 }
 
 *::before, *::after  {
   box-sizing: inherit;
 }
 
+body {
+  background-color: #1E1725;
+  color: #EFF0EB;
+  font-family: 'ZCOOL XiaoWei', serif;
+}
+input[type="number"] { 
+  width: 1rem;
+}
 
+footer {
+  position: fixed;
+  bottom: 0;
+}
+a:visited {
+  text-decoration-style: none;
+  color: green;
+  background-color: white;
+}
+a:link{
+  color: #000;
+}
+
+
+ a:visited{
+  color: #000;
+}
+ a:hover{
+  color: #000;
+}
+a:active{
+  color: #000;
+}
