@@ -103,7 +103,7 @@ var view = {
             }
 
             todoLi.id = position;
-            todoLi.textContent = todoTextWithCompletion
+            todoLi.textContent = todoTextWithCompletion;
             todoLi.appendChild(this.createToggleCompletedButton());
             todoLi.appendChild(this.createDeleteButton());
             todosOl.appendChild(todoLi);
