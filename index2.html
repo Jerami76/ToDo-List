@@ -8,11 +8,13 @@
     <title>Todo List</title>
     <meta name="description"
         content="This is the HTML created to display my TodoList app, created while completing the course 'PracticalJavascript' @WatchandCode.com. This page was created by Jerami in 2019.">
+    <link rel="stylesheet" type="text/css" href="normalize.css">
     <link rel="stylesheet" type="text/css" href="style.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
 <body>
-    <!--My header will have a title[Done] 
+    <!--My header will have a title[Done] normalize.css
         it will have a link to the contact-info which is below the todo list. [Done]
         link to contact information will be in the right corner.
     -->
@@ -36,7 +38,7 @@
             <label for="changeTodoTextInput">Change</label>
             <input id="changeTodoTextInput" type="text" placeholder="Todo">
             <label for="changeTodoPositionInput">#</label>
-            <input id="changeTodoPositionInput" type="number" min="1">
+            <input id="changeTodoPositionInput" type="number" min="1" size="2">
             <button onclick="handlers.changeTodo()" id="changeTodoButton">Change</button>
 
         </div>
@@ -50,35 +52,38 @@
 
         </ol>
 
-        <section>
-            <h3>Page Description</h3>
-            <p>This ToDo List app was created while completing the <a
-                    href="https://watchandcode.com/p/practical-javascript" target="">Practical JavaScript</a> course at
-                <a href="https://watchandcode.com/" target="">WatchandCode.com</a> taught by <a href="https://twitter.com/gordon_zhu" target=" "><img
-                        src="assets\images\MnzJXb3mREGbpivK8YsW_IMG_1789.jpg"
-                        alt="Image link to Gordon Zhu's twitter"></a>Gordon Zhu.</p>
+        
+</main>
 
-        </section>
-
-    </main>
-
-    <!--Contact information section will have my name, which is a link to my email
+<!--Contact information section will have my name, which is a link to my email
         There will be icons for the major code sites 
         Icons will be links to my pages-->
 
-    <footer id="contact-info">
-        <h4>Contact Jerami</h>
-        <a href="https://github.com/Jerami76" target="_blank" title="Click to check out my Github in a new tab"><span class="fab fa-github-square"></span></a>
-       
-        <a href="https://twitter.com/CodeAndLonely" title="Follow me on Twitter!" target="_blank"><span class="fab fa-twitter-square"></span></a>
+<footer id="contact-info">
+    <section>
+        <p>This ToDo List app was created while completing the <a href="https://watchandcode.com/p/practical-javascript"
+                target="">Practical JavaScript</a> course at
+            <a href="https://watchandcode.com/" target="">WatchandCode.com</a> taught by <a
+                href="https://twitter.com/gordon_zhu" target=" "><img
+                    src="assets\images\MnzJXb3mREGbpivK8YsW_IMG_1789.jpg"
+                    alt="Image link to Gordon Zhu's twitter"></a>Gordon Zhu.</p>
 
-        <a href="mailto:someone@example.com?Subject=Love%20the%20app" target="_blank" ><span class="fas fa-envelope-square"></span></a>
+    </section>
+    <h4>Contact Jerami</h>
+        <a href="https://github.com/Jerami76" target="_blank" title="Click to check out my Github in a new tab"><span
+                class="fab fa-github-square"></span></a>
+
+        <a href="https://twitter.com/CodeAndLonely" title="Follow me on Twitter!" target="_blank"><span
+                class="fab fa-twitter-square"></span></a>
+
+        <a href="mailto:someone@example.com?Subject=Love%20the%20app" target="_blank"><span
+                class="fas fa-envelope-square"></span></a>
 
         <small>Jerami 2019</small>
 
-    </footer>
+</footer>
 
-    <script src="script.js">
+<script src="script.js">
     </script>
 
 </body>
