@@ -1,0 +1,156 @@
+/*Some variables*/
+:root {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+*::before, *::after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+body {
+  width: 100vw;
+  height: auto;
+  background-color: black;
+  font-size: 2em;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+section {
+  width: 100%;
+  color: aqua;
+  text-align: center;
+}
+
+.logo-container {
+  width: 100%;
+  height: auto;
+  text-align: center;
+}
+
+.character-container {
+  display: inline-block;
+  width: 10.5vw;
+  height: 16vw;
+  background-color: white;
+  border: 0.5vw solid #000000;
+}
+
+.thin {
+  width: 5vw;
+}
+
+.period {
+  height: 5vw;
+  border-radius: 50%;
+}
+
+.J {
+  border-bottom-left-radius: 5vw;
+  border-bottom-right-radius: 5vw;
+}
+
+.J .knockout {
+  width: 5vw;
+  border-right: 0.5vw solid black;
+  border-left: 0.5vw solid black;
+  background-color: black;
+  height: 8vw;
+  position: relative;
+  right: 0.5vw;
+}
+
+.J .knockout-line {
+  border-right: 0.5vw solid black;
+  height: 2.5vw;
+  width: 5vw;
+}
+
+.E {
+  border-top-left-radius: 2.5vw;
+  border-bottom-left-radius: 2.5vw;
+}
+
+.E div {
+  width: 5vw;
+  height: 5vw;
+  border-top: 0.5vw solid black;
+  border-bottom: 0.5vw solid black;
+  position: relative;
+  left: 5.5vw;
+  top: 5vw;
+}
+
+.R {
+  border-top-right-radius: 5vw;
+}
+
+.R .R-top-line {
+  height: 2.5vw;
+  border-right: 0.5vw solid black;
+  width: 5vw;
+  position: relative;
+  top: 3.75vw;
+}
+
+.R .R-bottom-line {
+  position: relative;
+  top: 8.75vw;
+  height: 5vw;
+  width: 5vw;
+  border-right: 0.5vw solid black;
+}
+
+.A {
+  border-top-left-radius: 5vw;
+  border-top-right-radius: 5vw;
+}
+
+.A .A-top-line {
+  height: 2.5vw;
+  border-right: 0.5vw solid black;
+  width: 5vw;
+  position: relative;
+  top: 3.75vw;
+}
+
+.A-bottom-line {
+  position: relative;
+  top: 8.75vw;
+  height: 5vw;
+  width: 5vw;
+  border-right: 0.5vw solid black;
+}
+
+.M {
+  border-top-left-radius: 2.5vw;
+  border-top-right-radius: 2.5vw;
+}
+
+.M .M-top-line {
+  height: 3.75vw;
+  border-right: 0.5vw solid black;
+  width: 5vw;
+}
+
+.M .M-triangle {
+  position: relative;
+  height: 2.5vw;
+  width: 2.5vw;
+  border-right: 0.5vw solid black;
+  border-bottom: 0.5vw solid black;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  left: 3.807vw;
+  top: 4.25vw;
+}
+
+.M .M-bottom-line {
+  position: relative;
+  top: 4.5vw;
+  height: 5vw;
+  width: 5vw;
+  border-right: 0.5vw solid black;
+}
+/*# sourceMappingURL=splash.css.map */

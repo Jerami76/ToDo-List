@@ -1,0 +1,156 @@
+/*Some variables*/
+$border-width: .5vw;
+$base-unit: 10 * $border-width;
+$character-width: (2 * $base-unit) + $border-width;
+$character-height: (3 * $base-unit) + (2 * $border-width);
+$half-character-height: $character-height / 2;
+$half-unit: $base-unit / 2;
+$quarter-unit: $base-unit /4;
+$knockout-line-width: $border-width * 2;
+
+:root {
+    
+    box-sizing: border-box;
+}
+
+*::before, *::after {
+    box-sizing: inherit;
+}
+body {
+    width:100vw;
+    height: auto;
+    background-color: black;
+    font-size: 2em;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+section {
+width: 100%;
+color: aqua;
+text-align: center;
+}
+
+.logo-container {
+    width: 100%;
+    height: auto;
+    text-align:center ;
+}
+
+.character-container {
+    display: inline-block;
+    width: $character-width ;
+    height: $character-height;
+    background-color: white;
+    border: $border-width solid #000000;
+}
+
+.thin {
+    width: $base-unit;
+}
+
+.period {
+    height: $base-unit;
+    border-radius: 50%;
+}
+
+.J {
+    border-bottom-left-radius: $base-unit;
+    border-bottom-right-radius: $base-unit;
+    .knockout {
+        width: $base-unit;
+        border-right: $border-width solid black; 
+        border-left: $border-width solid black; 
+        background-color: black;
+        height: $half-character-height;
+        position: relative;
+        right: $border-width;  
+    }
+    .knockout-line {
+        border-right: $border-width solid black;
+        height:  $half-unit;
+        width: $base-unit;        
+    }
+}
+
+.E {
+    border-top-left-radius: $half-unit;
+    border-bottom-left-radius: $half-unit;
+    div {
+        width: $base-unit;
+        height: $base-unit;
+        border-top: $border-width solid black;
+        border-bottom: $border-width solid black;
+        position: relative;
+        left: $base-unit + $border-width;
+        top: $base-unit;
+    }
+}
+
+.R {
+    border-top-right-radius: $base-unit;
+    .R-top-line {
+        height: $half-unit;
+        border-right: $border-width solid black;
+        width: $base-unit;
+        position: relative;
+        top: 3 * $quarter-unit;
+    }
+   
+    .R-bottom-line {
+        position: relative;
+        top:  $base-unit + (3 * $quarter-unit);
+        height: $base-unit;
+        width: $base-unit ;
+        border-right: $border-width solid black;
+    }
+}
+
+.A {
+    border-top-left-radius: $base-unit;
+    border-top-right-radius: $base-unit;
+    .A-top-line {
+        height: $half-unit;
+        border-right: $border-width solid black;
+        width: $base-unit;
+        position: relative;
+        top: 3 * $quarter-unit;
+    }     
+}
+
+.A-bottom-line {
+    position: relative;
+    top:  $base-unit + (3 * $quarter-unit);
+    height: $base-unit;
+    width: $base-unit ;
+    border-right: $border-width solid black;
+}
+
+.M {
+    border-top-left-radius: $half-unit;
+    border-top-right-radius: $half-unit;
+    .M-top-line {
+    height: $half-unit + $quarter-unit;
+    border-right: $border-width solid black;
+    width: $base-unit;
+      }
+
+    .M-triangle {
+        position: relative; 
+        height: $half-unit; 
+        width: $half-unit; 
+        border-right: $border-width solid black; 
+        border-bottom: $border-width solid black;
+        transform: rotate(45deg);
+        left: (3 * $quarter-unit) + (.114* $border-width);
+        top: (3 * $quarter-unit) + $border-width;        
+      }
+      .M-bottom-line {
+        position: relative;
+        top:  (3 * $quarter-unit) + (1.5 * $border-width);
+        
+        height: $base-unit;
+        width: $base-unit ;
+        border-right: $border-width solid black;
+    }
+}
+
